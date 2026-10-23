@@ -1,0 +1,34 @@
+[
+  {
+    "id": "aishwaryam",
+    "titleKey": "project.aishwaryam.title",
+    "typeKey": "project.aishwaryam.type",
+    "descriptionKey": "project.aishwaryam.description",
+    "imageKey": "restaurant",
+    "demoKey": "aishwaryam"
+  },
+  {
+    "id": "cafe-concept",
+    "titleKey": "project.cafe.title",
+    "typeKey": "business.cafe",
+    "descriptionKey": "project.cafe.description",
+    "imageKey": "cafe",
+    "badgeKey": "project.concept"
+  },
+  {
+    "id": "gym-concept",
+    "titleKey": "project.gym.title",
+    "typeKey": "business.gym",
+    "descriptionKey": "project.gym.description",
+    "imageKey": "gym",
+    "badgeKey": "project.concept"
+  },
+  {
+    "id": "hotel-concept",
+    "titleKey": "project.hotel.title",
+    "typeKey": "business.hotel",
+    "descriptionKey": "project.hotel.description",
+    "imageKey": "hotel-lobby",
+    "badgeKey": "project.concept"
+  }
+]

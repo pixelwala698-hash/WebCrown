@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WebCrown | Websites for cafes, restaurants and shops</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F6F8;--fg:#1B1F3B;--mute:#4d5270;--yellow:#FFC400;--red:#E63946;--teal:#1D8A99;--panel:#fff;--line:#d9dde5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14172b;--fg:#f1f2f7;--mute:#aeb3cc;--panel:#1f2340;--line:#343a60}}
+:root[data-theme="dark"]{--bg:#14172b;--fg:#f1f2f7;--mute:#aeb3cc;--panel:#1f2340;--line:#343a60}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 "DM Sans",system-ui,Arial,sans-serif}
+h1,h2,h3{font-family:"Bowlby One","Arial Black",Impact,sans-serif;font-weight:400;line-height:1.08;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-family:"Bowlby One","Arial Black",sans-serif;font-size:22px;text-decoration:none}
+.logo i{display:inline-block;width:.6em;height:.6em;background:var(--yellow);margin-right:6px;box-shadow:.3em .3em 0 var(--red)}
+nav a{margin-left:18px;text-decoration:none;font-weight:500}
+.btn{display:inline-block;background:var(--yellow);color:#1B1F3B;font-weight:700;padding:14px 24px;border-radius:4px;text-decoration:none;border:2px solid #1B1F3B;box-shadow:4px 4px 0 #1B1F3B;cursor:pointer;font-size:17px;font-family:inherit}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 #1B1F3B}
+.btn.alt{background:transparent;color:var(--fg);border-color:var(--fg);box-shadow:none}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;padding:36px 0 64px}
+.hero h1{font-size:clamp(38px,6.4vw,70px)}
+.hero p{max-width:46ch;color:var(--mute);font-size:19px;margin:20px 0 28px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.shop{width:100%;height:auto;display:block}
+.shop .stripe{animation:drop .7s cubic-bezier(.3,1.4,.5,1) both}
+.shop .stripe:nth-child(2n){animation-delay:.08s}.shop .stripe:nth-child(3n){animation-delay:.16s}
+@keyframes drop{from{transform:translateY(-40px);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.shop .stripe{animation:none}html{scroll-behavior:auto}}
+section{padding:64px 0;border-top:2px solid var(--line)}
+section h2{font-size:clamp(28px,4.2vw,42px);margin-bottom:12px}
+.lead{color:var(--mute);max-width:56ch;margin:0 0 32px}
+.rows>div{display:grid;grid-template-columns:220px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.rows h3{font-size:20px}
+.rows p{margin:0;color:var(--mute)}
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.work figure{margin:0}
+.work .thumb{aspect-ratio:4/3;border-radius:4px;display:flex;align-items:flex-end;padding:14px;font-family:"Bowlby One",sans-serif;font-size:22px;color:#fff;border:2px solid var(--fg)}
+.work figcaption{margin-top:10px;color:var(--mute);font-size:15px}
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.steps li{counter-increment:s;border-left:4px solid var(--yellow);padding-left:14px}
+.steps li:before{content:counter(s);font-family:"Bowlby One",sans-serif;font-size:28px;color:var(--red);display:block}
+.steps b{display:block}.steps span{color:var(--mute);font-size:15px}
+.est{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.est fieldset{border:2px solid var(--line);border-radius:4px;padding:16px 18px;margin:0;background:var(--panel)}
+.est legend{font-weight:700;padding:0 6px}
+.est label{display:flex;justify-content:space-between;gap:12px;padding:8px 0;cursor:pointer}
+.est select{width:100%;padding:10px;font:inherit;background:var(--bg);color:var(--fg);border:2px solid var(--line);border-radius:4px;margin-bottom:8px}
+.out{background:var(--fg);color:var(--bg);border-radius:4px;padding:26px;align-self:start}
+.out small{opacity:.8}
+.out .amt{font-family:"Bowlby One",sans-serif;font-size:clamp(26px,4vw,38px);margin:8px 0 14px;color:var(--yellow)}
+.out .amt{color:#FFC400}
+footer{padding:48px 0 64px;border-top:2px solid var(--line)}
+footer h2{margin-bottom:16px}
+footer p{color:var(--mute);max-width:52ch}
+@media (max-width:760px){.hero,.est{grid-template-columns:1fr}.work{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.rows>div{grid-template-columns:1fr;gap:6px}nav a:not(.keep){display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="logo" href="#top"><i></i>WebCrown</a>
+  <nav><a href="#work">Work</a><a href="#cost">Cost estimate</a><a class="keep" href="#contact">Contact</a></nav>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div>
+    <h1>Aapki dukaan, ab online.</h1>
+    <p>WebCrown cafes, restaurants, shops aur brands ke liye aisi websites banata hai jo customers ko menu, timing aur location turant dikha dein. Pehle aapka business samajhte hain, phir website banate hain.</p>
+    <div class="cta"><a class="btn" id="waTop" href="#contact">WhatsApp par baat karein</a><a class="btn alt" href="#cost">Cost estimate dekhein</a></div>
+  </div>
+  <svg class="shop" viewBox="0 0 160 136" role="img" aria-label="Pixel-art illustration of a small shopfront with a striped awning" shape-rendering="crispEdges">
+    <rect x="8" y="40" width="144" height="88" fill="#FFF8E7" stroke="#1B1F3B" stroke-width="4"/>
+    <rect x="16" y="8" width="128" height="24" fill="#FFC400" stroke="#1B1F3B" stroke-width="4"/>
+    <text x="80" y="26" text-anchor="middle" font-family="Bowlby One,Arial Black,sans-serif" font-size="14" fill="#1B1F3B">YOUR SHOP</text>
+    <g>
+      <rect class="stripe" x="8" y="36" width="18" height="16" fill="#E63946"/><rect class="stripe" x="26" y="36" width="18" height="16" fill="#fff"/>
+      <rect class="stripe" x="44" y="36" width="18" height="16" fill="#E63946"/><rect class="stripe" x="62" y="36" width="18" height="16" fill="#fff"/>
+      <rect class="stripe" x="80" y="36" width="18" height="16" fill="#E63946"/><rect class="stripe" x="98" y="36" width="18" height="16" fill="#fff"/>
+      <rect class="stripe" x="116" y="36" width="18" height="16" fill="#E63946"/><rect class="stripe" x="134" y="36" width="18" height="16" fill="#fff"/>
+    </g>
+    <rect x="20" y="64" width="52" height="40" fill="#1D8A99" stroke="#1B1F3B" stroke-width="4"/>
+    <rect x="28" y="72" width="16" height="12" fill="#9fe3ee"/><rect x="48" y="72" width="16" height="12" fill="#9fe3ee"/>
+    <rect x="92" y="64" width="44" height="64" fill="#1B1F3B"/><rect x="124" y="94" width="6" height="6" fill="#FFC400"/>
+    <rect x="4" y="124" width="152" height="8" fill="#1B1F3B"/>
+  </svg>
+</div>
+
+<section id="services">
+  <h2>Hum kya karte hain</h2>
+  <p class="lead">Ek hi jagah par design, development aur setup. Aapko sirf apne business par dhyan dena hai.</p>
+  <div class="rows">
+    <div><h3>Business website</h3><p>Menu ya products, photos, timing, map aur contact. Phone par tez chalne wali, Google par milne wali.</p></div>
+    <div><h3>Online order aur booking</h3><p>WhatsApp order button, table booking ya enquiry form, taaki customers seedhe aapse judein.</p></div>
+    <div><h3>Google Business setup</h3><p>Maps listing aur website ko jodna, taaki "near me" searches mein aap dikhein.</p></div>
+    <div><h3>Logo aur contact card</h3><p>Chhote brands ke liye simple identity aur digital visiting card.</p></div>
+  </div>
+</section>
+
+<section id="work">
+  <h2>Hamara kaam</h2>
+  <p class="lead">Ye concept designs hain jo dikhate hain ki aapki website kaisi ho sakti hai. Pehle real projects jaldi yahan judenge.</p>
+  <div class="work">
+    <figure><div class="thumb" style="background:#7a4b2a">Cafe</div><figcaption>Cafe concept: menu, gallery, location</figcaption></figure>
+    <figure><div class="thumb" style="background:#E63946">Restaurant</div><figcaption>Restaurant concept: menu, order, table booking</figcaption></figure>
+    <figure><div class="thumb" style="background:#1D8A99">Shop</div><figcaption>Retail shop concept: catalogue, WhatsApp enquiry</figcaption></figure>
+  </div>
+</section>
+
+<section id="process">
+  <h2>Kaam kaise hota hai</h2>
+  <p class="lead">Chaar simple steps, bina technical jhanjhat ke.</p>
+  <ol class="steps">
+    <li><b>Baat-cheet</b><span>Aapka business, customers aur zarurat samajhte hain.</span></li>
+    <li><b>Demo</b><span>Homepage ka free demo dikhate hain.</span></li>
+    <li><b>Build</b><span>Aapke menu, photos aur data se pura site banate hain.</span></li>
+    <li><b>Launch</b><span>Live karte hain aur sab kuch samjhate hain.</span></li>
+  </ol>
+</section>
+
+<section id="cost">
+  <h2>Kitna kharcha aayega?</h2>
+  <p class="lead">Apni zarurat chunein aur andaza dekhein. Ye sirf approximate range hai, final quote baat-cheet ke baad milta hai.</p>
+  <div class="est">
+    <div>
+      <fieldset>
+        <legend>Website ka size</legend>
+        <select id="size" aria-label="Website size">
+          <option value="6000">1 page (simple)</option>
+          <option value="12000" selected>3 to 5 pages</option>
+          <option value="20000">6 to 10 pages</option>
+        </select>
+        <legend style="margin-top:8px">Extra features</legend>
+        <label><span><input type="checkbox" data-p="2000"> Photo gallery</span><span>+₹2,000</span></label>
+        <label><span><input type="checkbox" data-p="2500"> WhatsApp order / enquiry</span><span>+₹2,500</span></label>
+        <label><span><input type="checkbox" data-p="4000"> Table booking form</span><span>+₹4,000</span></label>
+        <label><span><input type="checkbox" data-p="3000"> Google Business setup</span><span>+₹3,000</span></label>
+        <label><span><input type="checkbox" data-p="3500"> Logo and contact card</span><span>+₹3,500</span></label>
+        <label><span><input type="checkbox" data-p="1500"> Domain and hosting help</span><span>+₹1,500</span></label>
+      </fieldset>
+    </div>
+    <div class="out" aria-live="polite">
+      <small>Approximate cost</small>
+      <div class="amt" id="amt">₹0</div>
+      <small>Aapki zarurat ke hisaab se range. Baat karke hum exact quote dete hain.</small>
+      <p style="margin:18px 0 0"><a class="btn" id="waCost" href="#contact">Is estimate par baat karein</a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <h2>Chaliye, aapki website banate hain</h2>
+  <p>Cafe, restaurant ya shop ho, ek message bhejiye. Hum aapko free demo dikhayenge.</p>
+  <p><a class="btn" id="waBtm" href="#contact">WhatsApp: WebCrown</a></p>
+  <p style="font-size:14px">© WebCrown</p>
+</footer>
+</div>
+
+<script>
+var PHONE="919822734707"; // WhatsApp number, country code ke saath, bina + ke
+function wa(msg){return"https://wa.me/"+PHONE+"?text="+encodeURIComponent(msg)}
+var size=document.getElementById("size"),boxes=document.querySelectorAll("[data-p]"),amt=document.getElementById("amt");
+function fmt(n){return"₹"+(Math.round(n/500)*500).toLocaleString("en-IN")}
+function calc(){
+  var t=+size.value,f=[];
+  boxes.forEach(function(b){if(b.checked){t+=+b.dataset.p;f.push(b.parentNode.textContent.trim())}});
+  var lo=t*0.9,hi=t*1.15;
+  amt.textContent=fmt(lo)+" – "+fmt(hi);
+  document.getElementById("waCost").href=wa("Hi WebCrown, mujhe website chahiye. Size: "+size.options[size.selectedIndex].text+(f.length?", features: "+f.join(", "):"")+". Estimate: "+amt.textContent);
+}
+size.addEventListener("change",calc);boxes.forEach(function(b){b.addEventListener("change",calc)});calc();
+["waTop","waBtm"].forEach(function(id){document.getElementById(id).href=wa("Hi WebCrown, mujhe apne business ke liye website chahiye.")});
+</script>
+</body>
+</html>

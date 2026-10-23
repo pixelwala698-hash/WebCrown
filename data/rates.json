@@ -1,0 +1,39 @@
+{
+  "currency": "INR",
+  "baseFee": 6000,
+  "perPage": 1800,
+  "businessTypes": [
+    { "id": "restaurant", "labelKey": "business.restaurant", "baseFee": 2500 },
+    { "id": "cafe", "labelKey": "business.cafe", "baseFee": 1500 },
+    { "id": "hotel", "labelKey": "business.hotel", "baseFee": 5000 },
+    { "id": "gym", "labelKey": "business.gym", "baseFee": 2000 },
+    { "id": "salon", "labelKey": "business.salon", "baseFee": 1500 },
+    { "id": "boutique", "labelKey": "business.boutique", "baseFee": 1500 },
+    { "id": "bakery", "labelKey": "business.bakery", "baseFee": 1200 },
+    { "id": "coaching", "labelKey": "business.coaching", "baseFee": 1500 },
+    { "id": "furniture", "labelKey": "business.furniture", "baseFee": 2000 },
+    { "id": "brand", "labelKey": "business.brand", "baseFee": 1500 },
+    { "id": "other", "labelKey": "estimator.business.other", "baseFee": 1000 }
+  ],
+  "features": [
+    { "id": "ordering", "labelKey": "estimate.feature.ordering", "price": 5000 },
+    { "id": "booking", "labelKey": "estimate.feature.booking", "price": 4000 },
+    { "id": "walkthrough", "labelKey": "estimate.feature.walkthrough", "price": 12000 },
+    { "id": "google", "labelKey": "estimate.feature.google", "price": 3000 },
+    { "id": "branding", "labelKey": "estimate.feature.branding", "price": 3500 },
+    { "id": "domain", "labelKey": "estimate.feature.domain", "price": 1500 }
+  ],
+  "languages": [
+    { "id": "en", "labelKey": "language.native.en", "price": 0 },
+    { "id": "hi", "labelKey": "language.native.hi", "price": 2500 },
+    { "id": "mr", "labelKey": "language.native.mr", "price": 2500 },
+    { "id": "ta", "labelKey": "language.native.ta", "price": 3000 },
+    { "id": "gu", "labelKey": "language.native.gu", "price": 2500 },
+    { "id": "hinglish", "labelKey": "language.native.hinglish", "price": 1500 }
+  ],
+  "delivery": {
+    "normal": { "labelKey": "estimator.delivery.normal", "days": 14, "multiplier": 1 },
+    "rush": { "labelKey": "estimator.delivery.rush", "days": 7, "multiplier": 1.35 }
+  },
+  "range": { "lowMultiplier": 0.9, "highMultiplier": 1.15, "roundingStep": 500 }
+}

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080a10">
+  <meta name="description" content="Premium interactive websites for independent hotels, restaurants, shops and local businesses.">
+  <meta property="og:title" content="WebCrown | Immersive websites for local businesses">
+  <meta property="og:description" content="Premium interactive websites for independent hotels, restaurants, shops and local businesses.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://webcrown.example.com/assets/interiors/restaurant.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WebCrown | Immersive websites for local businesses">
+  <meta name="twitter:description" content="Premium interactive websites for independent hotels, restaurants, shops and local businesses.">
+  <meta name="twitter:image" content="https://webcrown.example.com/assets/interiors/restaurant.webp">
+  <link rel="canonical" href="https://webcrown.example.com/">
+  <title>WebCrown | Immersive websites for local businesses</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%23f2bd62' d='M4 10h7v7h6V7h7v10h6v-7h7v19H4zM7 33h26v4H7z'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Gujarati:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <section id="app-fallback" class="app-fallback" role="alert">
+    <h1>WebCrown is having trouble loading.</h1>
+    <p>Please open this page from a local web server, or check that JavaScript is enabled and reload.</p>
+    <noscript><p>This website needs JavaScript enabled to show its language selector and interactive spaces.</p></noscript>
+  </section>
+  <header class="site-header">
+    <a class="brand" href="#top" data-i18n-aria="brand.name">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M4 10h7v7h6V7h7v10h6v-7h7v19H4zM7 33h26v4H7z" fill="currentColor"/>
+      </svg>
+      <span data-i18n="brand.name">WebCrown</span>
+    </a>
+    <nav class="main-nav" data-i18n-aria="nav.label">
+      <a href="#spaces" data-i18n="nav.spaces"></a>
+      <a href="#portfolio" data-i18n="nav.portfolio"></a>
+      <a href="#cost" data-i18n="nav.cost"></a>
+      <a href="#contact" data-i18n="nav.contact"></a>
+    </nav>
+    <label class="language-control">
+      <span class="sr-only" data-i18n="language.switch"></span>
+      <select id="language-switcher" data-i18n-aria="language.switch"></select>
+    </label>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy glass-card">
+        <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+        <h1 data-i18n="hero.title"></h1>
+        <p class="tagline" data-i18n="hero.tagline"></p>
+        <p class="intro" data-i18n="hero.description"></p>
+        <div class="button-row">
+          <a class="button button-primary" href="#spaces" data-i18n="hero.explore"></a>
+          <a class="button button-quiet" href="#cost" data-i18n="hero.estimate"></a>
+        </div>
+        <p class="scroll-cue" data-i18n="hero.scroll"></p>
+      </div>
+      <a class="hero-scroll" href="#spaces" data-i18n-aria="hero.explore">↓</a>
+    </section>
+
+    <section id="spaces" class="spaces" data-i18n-aria="spaces.label">
+      <div id="spaces-list"></div>
+    </section>
+
+    <section class="section-shell content-section" id="portfolio">
+      <div class="glass-card section-card portfolio-section">
+        <p class="eyebrow" data-i18n="portfolio.eyebrow"></p>
+        <h2 data-i18n="portfolio.title"></h2>
+        <p class="section-intro" data-i18n="portfolio.description"></p>
+        <div class="project-grid" id="project-grid"></div>
+      </div>
+    </section>
+
+    <section class="section-shell content-section" id="cost">
+      <div class="glass-card section-card">
+        <p class="eyebrow" data-i18n="estimator.eyebrow"></p>
+        <h2 data-i18n="estimator.title"></h2>
+        <p class="section-intro" data-i18n="estimator.description"></p>
+        <div class="estimator-layout">
+          <fieldset class="estimate-options">
+            <legend class="sr-only" data-i18n="estimator.title"></legend>
+            <label for="estimate-business" data-i18n="estimator.business"></label>
+            <select id="estimate-business"></select>
+            <label for="estimate-pages" data-i18n="estimator.pages"></label>
+            <input id="estimate-pages" type="number" min="1" max="30" value="5" inputmode="numeric" aria-describedby="estimate-error" required>
+            <p class="option-heading" data-i18n="estimator.extras"></p>
+            <div id="estimate-features"></div>
+            <fieldset class="estimate-languages">
+              <legend data-i18n="estimator.languages"></legend>
+              <div id="estimate-languages"></div>
+            </fieldset>
+            <fieldset class="estimate-delivery">
+              <legend data-i18n="estimator.delivery"></legend>
+              <div id="estimate-delivery"></div>
+            </fieldset>
+            <label for="quote-name" data-i18n="estimator.nameOptional"></label>
+            <input id="quote-name" type="text" autocomplete="name" maxlength="80">
+            <p class="form-error" id="estimate-error" role="alert" hidden></p>
+          </fieldset>
+          <div class="estimate-result" aria-live="polite">
+            <p class="result-label" data-i18n="estimator.approx"></p>
+            <output class="estimate-amount" id="amt">₹6,000 – ₹8,000</output>
+            <h3 data-i18n="estimator.breakdown"></h3>
+            <ul id="estimate-breakdown" class="estimate-breakdown"></ul>
+            <p><span data-i18n="estimator.deliveryTime"></span>: <strong id="estimate-days"></strong></p>
+            <p class="result-note" data-i18n="estimator.note"></p>
+            <p class="quote-recipient-label" data-i18n="estimator.recipient"></p>
+            <div class="quote-actions">
+              <button class="button button-primary" id="quote-bhavesh" type="button" data-i18n="estimator.sendBhavesh"></button>
+              <button class="button button-quiet" id="quote-grishma" type="button" data-i18n="estimator.sendGrishma"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell content-section" id="contact">
+      <div class="glass-card section-card contact-card">
+        <p class="eyebrow" data-i18n="contact.eyebrow"></p>
+        <h2 data-i18n="contact.title"></h2>
+        <p class="section-intro" data-i18n="contact.description"></p>
+        <form id="lead-form" class="lead-form" novalidate>
+          <div class="form-field">
+            <label for="lead-name" data-i18n="lead.name"></label>
+            <input id="lead-name" name="name" type="text" autocomplete="name" maxlength="80">
+            <p class="form-error" id="lead-name-error" role="alert" hidden></p>
+          </div>
+          <div class="form-field">
+            <label for="lead-phone" data-i18n="lead.phone"></label>
+            <input id="lead-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="lead-phone-error" required>
+            <p class="form-error" id="lead-phone-error" role="alert" hidden></p>
+          </div>
+          <div class="form-field">
+            <label for="lead-business" data-i18n="lead.business"></label>
+            <select id="lead-business" name="business" aria-describedby="lead-business-error" required></select>
+            <p class="form-error" id="lead-business-error" role="alert" hidden></p>
+          </div>
+          <div class="form-field form-field-wide">
+            <label for="lead-message" data-i18n="lead.message"></label>
+            <textarea id="lead-message" name="message" rows="4" maxlength="1000" aria-describedby="lead-message-error" required></textarea>
+            <p class="form-error" id="lead-message-error" role="alert" hidden></p>
+          </div>
+          <div class="form-field-wide">
+            <div class="quote-actions">
+              <button class="button button-primary" type="submit" value="bhavesh" data-i18n="lead.sendBhavesh"></button>
+              <button class="button button-quiet" type="submit" value="grishma" data-i18n="lead.sendGrishma"></button>
+            </div>
+            <p class="form-error" id="lead-form-error" role="alert" hidden></p>
+          </div>
+        </form>
+        <div class="people">
+          <a id="waB" class="contact-person" href="https://wa.me/919822734707">
+            <b>Bhavesh Bobde</b><span>9822734707</span><span class="contact-cta" data-i18n="contact.whatsapp"></span>
+          </a>
+          <a id="waG" class="contact-person" href="https://wa.me/918600103414">
+            <b>Grishma Parshivnikar</b><span>8600103414</span><span class="contact-cta" data-i18n="contact.whatsapp"></span>
+          </a>
+        </div>
+        <p class="privacy-note" data-i18n="privacy.text"></p>
+        <div class="business-chips">
+          <span data-i18n="business.hotel"></span><span data-i18n="business.restaurant"></span>
+          <span data-i18n="business.cafe"></span><span data-i18n="business.gym"></span>
+          <span data-i18n="business.salon"></span><span data-i18n="business.boutique"></span>
+          <span data-i18n="business.bakery"></span><span data-i18n="business.coaching"></span>
+          <span data-i18n="business.furniture"></span><span data-i18n="business.brand"></span>
+        </div>
+        <footer class="site-footer">
+          <span data-i18n="footer.copyright"></span>
+          <span class="footer-contacts">
+            <a href="tel:+919822734707">9822734707</a>
+            <a href="https://wa.me/919822734707">WhatsApp</a>
+            <a href="tel:+918600103414">8600103414</a>
+            <a href="https://wa.me/918600103414">WhatsApp</a>
+          </span>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "WebCrown",
+      "description": "Premium interactive websites for local hospitality, retail and service businesses.",
+      "areaServed": "India",
+      "telephone": ["+91 98227 34707", "+91 86001 03414"],
+      "url": "https://webcrown.example.com/",
+      "sameAs": [
+        "https://wa.me/919822734707",
+        "https://wa.me/918600103414"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+91 98227 34707",
+          "contactType": "sales",
+          "areaServed": "IN",
+          "availableLanguage": ["English", "Hindi", "Marathi", "Tamil", "Gujarati"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+91 86001 03414",
+          "contactType": "sales",
+          "areaServed": "IN",
+          "availableLanguage": ["English", "Hindi", "Marathi", "Tamil", "Gujarati"]
+        }
+      ]
+    }
+  </script>
+
+  <div class="language-overlay" id="language-overlay" hidden>
+    <section class="language-dialog" role="dialog" aria-modal="true" aria-labelledby="language-title">
+      <svg class="dialog-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M4 10h7v7h6V7h7v10h6v-7h7v19H4zM7 33h26v4H7z" fill="currentColor"/>
+      </svg>
+      <p class="eyebrow" data-i18n="language.eyebrow"></p>
+      <h2 id="language-title" data-i18n="language.title"></h2>
+      <p class="language-subtitle" data-i18n="language.description"></p>
+      <div class="language-options" id="language-options"></div>
+    </section>
+  </div>
+
+  <div id="admin-root" hidden></div>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
